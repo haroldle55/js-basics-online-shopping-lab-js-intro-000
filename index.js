@@ -32,7 +32,20 @@ function total() {
 }
 
 function removeFromCart(item) {
-  // write your code here
+  var sum = 0
+  for (let i = 0; i < cart.length; i += 1) {
+    if (item !== cart[i].itemName) {
+      sum += 0
+    } else if (item === cart[i].itemName) {
+      sum += 1;
+      cart.splice(i, 1);
+    }
+  }
+  if (sum === 0) {
+    return "That item is not in your cart."
+  } else {
+    return cart;
+  }
 }
 
 function placeOrder(cardNumber) {
