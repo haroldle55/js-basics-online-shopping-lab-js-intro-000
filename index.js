@@ -15,13 +15,13 @@ return `${item} has been added to your cart.`
 }
 
 function viewCart() {
-if (cart.length===0){
-return 'Your shopping cart is empty.'
-}
-if(cart.length===1){
-return `In your cart, you have ${cart[0].itemName} at ${cart[0].itemPrice}.`
-}
-}
+  var newArray = []
+  for (let i = 0; i < cart.length; i++) {
+    newArray.push(` ${cart[i].itemName} at $${cart[i].itemPrice}`)}
+    if (cart.length === 0) {return `Your shopping cart is empty.`}
+    else if (cart.length === 1) {return `In your cart, you have${newArray}.`}
+    else {return `In your cart, you have${newArray.slice(0, newArray.length - 1)}, and${newArray.slice(-1)}.`}
+  }	
 
 function total() {
   // write your code here
