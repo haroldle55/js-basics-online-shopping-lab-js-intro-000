@@ -15,10 +15,12 @@ return `${item} has been added to your cart.`
 }
 
 function viewCart() {
-if (cart.length===0)
+if (cart.length===0){
 return 'Your shopping cart is empty.'
-if(cart.length===1)
+}
+if(cart.length===1){
 return `In your cart, you have ${cart[0].itemName} at ${cart[0].itemPrice}.`
+}
 }
 
 function total() {
