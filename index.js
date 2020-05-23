@@ -21,10 +21,13 @@ function viewCart() {
     if (cart.length === 0) {return `Your shopping cart is empty.`}
     else if (cart.length === 1) {return `In your cart, you have${newArray}.`}
     else {return `In your cart, you have${newArray.slice(0, newArray.length - 1)}, and${newArray.slice(-1)}.`}
-  }	
+  }
 
 function total() {
-  // write your code here
+ var sum=0
+ for(let i=0;i<cart.length;i++)
+ sum += cart[i]+itemPrice
+ return sum
 }
 
 function removeFromCart(item) {
